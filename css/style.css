@@ -3,6 +3,13 @@ body {
     text-align: center;
     }
 
+header {
+    background-color: #F15B31;
+    color: #ffffff;
+    padding: 30px 20px;
+
+}
+
 h1 {
     font-family: "Raleway", sans-serif;
     color: #0D2C40;
@@ -13,7 +20,7 @@ h1 {
 
 #game {
     font-family: "Raleway", sans-serif;
-    color: #F15B31;
+    color: #0D2C40;
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 18px;
@@ -26,6 +33,15 @@ h1 {
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 20px;
+    text-decoration: none;
+}
+
+#about {
+    font-family: "Raleway", sans-serif;
+    color: #0D2C40;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 18px;
     text-decoration: none;
 }
     
