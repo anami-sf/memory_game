@@ -1,5 +1,6 @@
 
 body {
+    font-family: "Raleway", sans-serif;
     text-align: center;
     margin: 0;
     }
@@ -7,35 +8,51 @@ body {
 header {
     background-color: #F15B31;
     color: #ffffff;
-    padding: 30px 20px;
-
 }
 
 nav {
     background-color: #00A6B3;
-    color: #ffffff;
     padding: 20px 0;
+    margin: none;
+    color: #ffffff;
 }
 
 main {
-    width: 850px;
     margin: 35px auto;
 }
 
-h1 {
-    font-family: "Raleway", sans-serif;
-    letter-spacing: 1px;
+h1 {    
+    letter-spacing: 2px;
     font-weight: 400;
     font-size: 45px;
+    padding: 30px 20px;
     margin: 0;
     }
+
+h2 {
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 20px 30px;
+    margin: 0;
+}
 
 img {
     margin: 40px 8px;
 }
 
 a {
+    text-decoration: none;
     margin: 20px;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.a_nav {
+    color: #ffffff;
 }
     
 p {
@@ -43,27 +60,3 @@ p {
     line-height: 26px;
     font-size: 18px;
     }
-
-#game {
-    font-family: "Raleway", sans-serif;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-#instructions {
-    font-family: "Raleway", sans-serif;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-#about {
-    font-family: "Raleway", sans-serif;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-size: 18px;
-    text-decoration: none;
-}
