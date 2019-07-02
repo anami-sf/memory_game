@@ -44,11 +44,16 @@ img {
 
 a {
     text-decoration: none;
+    border-bottom: 2px solid transparent;
     margin: 20px;
     font-family: "Raleway", sans-serif;
     letter-spacing: 1px;
     font-weight: 400;
     font-size: 18px;
+}
+
+a:hover {
+    border-bottom: 2px solid white;
 }
 
 .a_nav {
@@ -60,3 +65,33 @@ p {
     line-height: 26px;
     font-size: 18px;
     }
+
+footer{
+    padding: 0 20px;
+    background-color: #0D2C40;
+    color: white;
+    font-size: 14px;
+    letter-spacing: .08em;
+    font-weight: 500;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.copyright {
+    float: left;
+}
+
+.message {
+    float: right;
+}
+
+.name {
+    color: #F15B31;
+    font-weight: 700;
+}
+
+
