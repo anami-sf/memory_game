@@ -12,5 +12,11 @@ console.log("User flipped " + cardOne);
 console.log("User flipped " + cardTwo);
 console.log("Cards in play: " + cardsInPlay);
 
-
+if (cardsInPlay === 2){
+    if (cardsInPlay[0] === cardsInPlay[1]) {
+        alert("You found a match!");
+    } else {
+        alert("Sorry, try again");
+    }
+}
 
