@@ -33,7 +33,7 @@ const flipCard = (cardId) => {
 
     console.log("User flipped " + cards[cardId].rank);
     //Add card flipped by plyer to cardsInPlay
-    cardsInPlay.push(cards[cardId]);
+    cardsInPlay.push(cards[cardId].rank);
     console.log("Cards in play: " + cardsInPlay);
     checkForMatch()
 }
