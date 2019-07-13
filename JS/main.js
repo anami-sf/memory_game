@@ -1,4 +1,22 @@
-var cards =["queen", "queen", "king", "king"];
+var cards =[
+    {
+        name: "queen",
+        suit: "hearts",
+        image: "images/queen-of-hearts.png"
+    }, {
+        name: "queen",
+        suit: "diamonds",
+        image: "images/queen-of-diamonds.png"
+    }, {
+        name: "king",
+        suit: "hearts",
+        image: "images/king-of-hearts.png"
+    }, {
+        name: "king",
+        suit: "diamonds",
+        image: "images/king-of-diamonds.png"
+    }  
+];
 var cardsInPlay = [];
 
 const checkForMatch = () => {
@@ -22,3 +40,4 @@ const flipCard = (cardId) => {
 
 flipCard(0)
 flipCard(2)
+
