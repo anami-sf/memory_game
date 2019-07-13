@@ -1,21 +1,17 @@
 var cards =["queen", "queen", "king", "king"];
+// When cards are flipped they are added to array cardsInPlay
 var cardsInPlay = [];
 
-// Store all steps related to selecting and flipping over a card.
+// Flip card
 var flipCard = (card) => {
-
-    //var cardOne = cards[0]; //First card flipped by player
-    //var cardTwo = cards[2]; //Second card flipped by 
-    //console.log("User flipped " + cardTwo);
-    //cardsInPlay.push(cardTwo);
-
-    cardsInPlay.push(card);
+    
     console.log("User flipped " + card);
+    //Add flipped card to the cardsInPlay array 
+    cardsInPlay.push(card);
     console.log("Cards in play: " + cardsInPlay);
 }
 
-// Check if the two cards that the user has flipped over match each other.
-
+// Check if flipped cards match 
 var checkForMatch = () => {
     if (cardsInPlay.length === 2){
         if (cardsInPlay[0] === cardsInPlay[1]) {
