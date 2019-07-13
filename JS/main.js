@@ -32,6 +32,8 @@ const checkForMatch = () => {
 const flipCard = (cardId) => {
 
     console.log("User flipped " + cards[cardId].rank);
+    console.log(cards[cardId].suit)
+    console.log(cards[cardId].image)
     //Add card flipped by plyer to cardsInPlay
     cardsInPlay.push(cards[cardId].rank);
     console.log("Cards in play: " + cardsInPlay);
