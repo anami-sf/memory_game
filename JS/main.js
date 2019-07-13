@@ -17,8 +17,8 @@ const flipCard = (cardId) => {
     //Add cardOne flipped by plyer to cardsInPlay
     cardsInPlay.push(cards[cardId]);
     console.log("Cards in play: " + cardsInPlay);
+    checkForMatch()
 }
 
 flipCard(0)
 flipCard(1)
-checkForMatch()
