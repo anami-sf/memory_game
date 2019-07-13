@@ -1,18 +1,18 @@
 var cards =[
     {
-        name: "queen",
+        rank: "queen",
         suit: "hearts",
         image: "images/queen-of-hearts.png"
     }, {
-        name: "queen",
+        rank: "queen",
         suit: "diamonds",
         image: "images/queen-of-diamonds.png"
     }, {
-        name: "king",
+        rank: "king",
         suit: "hearts",
         image: "images/king-of-hearts.png"
     }, {
-        name: "king",
+        rank: "king",
         suit: "diamonds",
         image: "images/king-of-diamonds.png"
     }  
@@ -31,8 +31,8 @@ const checkForMatch = () => {
 
 const flipCard = (cardId) => {
 
-    console.log("User flipped " + cards[cardId]);
-    //Add cardOne flipped by plyer to cardsInPlay
+    console.log("User flipped " + cards[cardId].rank);
+    //Add card flipped by plyer to cardsInPlay
     cardsInPlay.push(cards[cardId]);
     console.log("Cards in play: " + cardsInPlay);
     checkForMatch()
