@@ -54,6 +54,7 @@ const createBoard = () => {
 }
 
 const checkForMatch = () => {
+
     if (cardsInPlay.length === 2){
         if (cardsInPlay[0] === cardsInPlay[1]) {
             console.log("You found a match!");
@@ -68,6 +69,8 @@ const flipCard = (event) => {
     //Should be able to use "this" instaead of event.target
     var cardId = event.target.getAttribute('data-id');
     console.log("flipped Card: " + cardId)
+
+    event.target.src = cards[cardId].image
 
     console.log("User flipped " + cards[cardId].rank);
     //Add card flipped by plyer to cardsInPlay
