@@ -1,3 +1,4 @@
+var cardsInPlay = [];
 var cards =[
     {
         rank: "queen",
@@ -38,7 +39,17 @@ const flipCard = (cardId) => {
 
 */
 
-var cardsInPlay = [];
+var board = document.querySelector('#game-board');
+
+const createBoard = () => {
+    for (var i=0; i<cards.length; i++) {
+        var cardElement = document.createElement('img')
+        cardElement.src = cards[i].image;
+        cardElement.setAttribute('data-id', i);
+        board.appendChild(cardElement)
+        cardElement.addEventListener('click', flipCard)
+    }
+}
 
 const checkForMatch = () => {
     if (cardsInPlay.length === 2){
@@ -61,6 +72,5 @@ const flipCard = (cardId) => {
     checkForMatch()
 }
 
-flipCard(0)
-flipCard(2)
+createBoard()
 
