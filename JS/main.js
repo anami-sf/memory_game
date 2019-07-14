@@ -1,3 +1,5 @@
+//Challange: add "reset" button and keep score
+
 var cardsInPlay = [];
 var cards =[
     {
@@ -44,7 +46,7 @@ var board = document.querySelector('#game-board');
 const createBoard = () => {
     for (var i=0; i<cards.length; i++) {
         var cardElement = document.createElement('img')
-        cardElement.src = cards[i].image;
+        cardElement.src = "images/back.png";
         cardElement.setAttribute('data-id', i);
         board.appendChild(cardElement)
         cardElement.addEventListener('click', flipCard)
@@ -57,15 +59,17 @@ const checkForMatch = () => {
             console.log("You found a match!");
         } else {
             console.log("Sorry, try again");
+            console.log("deck: " + cardsInPlay.length)
         }
     }
 }
 
-const flipCard = (cardId) => {
+const flipCard = (event) => {
+    //Should be able to use "this" instaead of event.target
+    var cardId = event.target.getAttribute('data-id');
+    console.log("flipped Card: " + cardId)
 
     console.log("User flipped " + cards[cardId].rank);
-    console.log(cards[cardId].suit)
-    console.log(cards[cardId].image)
     //Add card flipped by plyer to cardsInPlay
     cardsInPlay.push(cards[cardId].rank);
     console.log("Cards in play: " + cardsInPlay);
