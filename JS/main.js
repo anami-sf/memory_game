@@ -61,6 +61,7 @@ const checkForMatch = () => {
         } else {
             console.log("Sorry, try again");
             console.log("deck: " + cardsInPlay.length)
+            cardsInPlay = []
         }
     }
 }
