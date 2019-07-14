@@ -56,8 +56,9 @@ const createBoard = () => {
 const checkForMatch = () => {
 
     if (cardsInPlay.length === 2){
-        if (cardsInPlay[0] === cardsInPlay[1]) {
+        if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
             console.log("You found a match!");
+            cardsInPlay = []
         } else {
             console.log("Sorry, try again");
             console.log("deck: " + cardsInPlay.length)
@@ -75,8 +76,9 @@ const flipCard = (event) => {
 
     console.log("User flipped " + cards[cardId].rank);
     //Add card flipped by plyer to cardsInPlay
-    cardsInPlay.push(cards[cardId].rank);
+    cardsInPlay.push(cards[cardId]);
     console.log("Cards in play: " + cardsInPlay);
+    console.log("Cards left: " + cards)
     checkForMatch()
 }
 
