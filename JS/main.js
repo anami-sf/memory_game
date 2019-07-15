@@ -33,10 +33,11 @@ const createBoard = () => {
     }
 }
 
-// *** Task: XXXXXXX
+// *** Task: create score function
 
 var cardsInPlayHTML = []
 var matchedCards = [];
+var score = 0
 
 const checkForMatch = (cardOne, cardTwo) => {
 
@@ -48,7 +49,7 @@ const checkForMatch = (cardOne, cardTwo) => {
         console.log("Cards in PlayHTML: " + cardsInPlayHTML.length)
         matchedCards = matchedCards.concat(cardsInPlayHTML)  //added HTML
         console.log("Matched Cards: " + matchedCards.length) 
-        
+        score += 1
         cardsInPlayHTML = []
         console.log("You found a match!");
         
@@ -89,6 +90,9 @@ const reset = () => {
 }
 
 document.querySelector('#reset').addEventListener('click', reset)
+
+
+
 
 createBoard()
 
