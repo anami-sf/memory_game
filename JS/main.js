@@ -25,6 +25,7 @@ var board = document.querySelector('#game-board');
 const createBoard = () => {
     for (var i=0; i<cards.length; i++) {
         var cardElement = document.createElement('img')
+        cardElement.className = "card"
         cardElement.src = "images/back.png";
         cardElement.setAttribute('data-id', i);
         board.appendChild(cardElement)
@@ -68,7 +69,6 @@ const flipCard = (event) => {
         event.target.src = cards[cardId].image
         console.log("User flipped " + cards[cardId].rank);
         cardsInPlayHTML.push(event.target)
-        console.log("cardsInPlayHTML: " + cardsInPlayHTML)
         if (cardsInPlayHTML.length === 2){
             checkForMatch(cardsInPlayHTML[0], cardsInPlayHTML[1])
         }

@@ -66,6 +66,11 @@ p {
     font-size: 18px;
     }
 
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 footer{
     padding: 0 20px;
     background-color: #0D2C40;
