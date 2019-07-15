@@ -32,7 +32,7 @@ const createBoard = () => {
     }
 }
 
-// *** Task: Replace cardsInPlay with html elt
+// *** Task: XXXXXXX
 
 var cardsInPlayHTML = []
 var matchedCards = [];
@@ -76,6 +76,19 @@ const flipCard = (event) => {
     }
 
 }
+
+const reset = () => {
+
+    for (var i=0; i < matchedCards.length; i++) {
+
+        var card = matchedCards[i].getAttribute('src')
+        matchedCards[i].src = "images/back.png"       
+    }
+
+    matchedCards = []
+}
+
+document.querySelector('#reset').addEventListener('click', reset)
 
 createBoard()
 
