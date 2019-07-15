@@ -21,26 +21,6 @@ var cards =[
     }  
 ];
 
-/* When a card is flipped we need to change the image src
-
-1. select element
-3. create function to update image src
-2. create event listener
-
-const flipCard = (cardId) => {
-
-
-    console.log("User flipped " + cards[cardId].rank);
-    
-    //Add card flipped by plyer to cardsInPlay
-    cardsInPlay.push(cards[cardId].rank);
-    console.log("Cards in play: " + cardsInPlay);
-    
-    checkForMatch()
-}
-
-*/
-
 var board = document.querySelector('#game-board');
 
 const createBoard = () => {
