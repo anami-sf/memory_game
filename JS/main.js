@@ -27,35 +27,34 @@ const createBoard = () => {
         var cardElement = document.createElement('img')
         cardElement.src = "images/back.png";
         cardElement.setAttribute('data-id', i);
-        cards[i].id = i
         board.appendChild(cardElement)
         cardElement.addEventListener('click', flipCard)
     }
 }
 
-// *** Task: remove flipped card from cards if it is a match
+// *** Task: Replace cardsInPlay with html elt
 
-var cardsInPlay = [];
 var cardsInPlayHTML = []
 var matchedCards = [];
 
-const checkForMatch = (card1, card2) => {
+const checkForMatch = (cardOne, cardTwo) => {
 
-    if (cards[cardsInPlay[0]].rank === cards[cardsInPlay[1]].rank) {
+    var cardOneId = cardOne.getAttribute('data-id');
+    var cardTwoId = cardTwo.getAttribute('data-id');
+
+    if (cards[cardOneId].rank === cards[cardTwoId].rank) {
         console.log("Cards: " + cards)            
-        console.log("Cards in Play: " + cardsInPlay.length)
-        matchedCards = matchedCards.concat(cardsInPlay)
-        console.log("Matched Cards: " + matchedCards) 
+        console.log("Cards in PlayHTML: " + cardsInPlayHTML.length)
+        matchedCards = matchedCards.concat(cardsInPlayHTML)  //added HTML
+        console.log("Matched Cards: " + matchedCards.length) 
         
-        cardsInPlay = []
         cardsInPlayHTML = []
         console.log("You found a match!");
         
     } else {
         console.log("Sorry, try again");
-        card1.src = "images/back.png"
-        card2.src = "images/back.png"
-        cardsInPlay = []
+        cardOne.src = "images/back.png"
+        cardTwo.src = "images/back.png"
         cardsInPlayHTML = []
     }
 }
@@ -65,14 +64,12 @@ const flipCard = (event) => {
     //Should be able to use "this" instaead of event.target
     var cardId = event.target.getAttribute('data-id');
   
-    if (matchedCards.includes(cardId) != true) {
-        
+    if (matchedCards.includes(event.target) != true) { 
         event.target.src = cards[cardId].image
         console.log("User flipped " + cards[cardId].rank);
-        cardsInPlay.push(cardId);
         cardsInPlayHTML.push(event.target)
         console.log("cardsInPlayHTML: " + cardsInPlayHTML)
-        if (cardsInPlay.length === 2){
+        if (cardsInPlayHTML.length === 2){
             checkForMatch(cardsInPlayHTML[0], cardsInPlayHTML[1])
         }
         
