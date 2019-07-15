@@ -23,6 +23,9 @@ var cards =[
 var board = document.querySelector('#game-board');
 
 const createBoard = () => {
+
+    scoreBoard.textContent = "0"
+
     for (var i=0; i<cards.length; i++) {
         var cardElement = document.createElement('img')
         cardElement.className = "card"
@@ -37,7 +40,13 @@ const createBoard = () => {
 
 var cardsInPlayHTML = []
 var matchedCards = [];
+const scoreBoard = document.querySelector('#score')
 var score = 0
+
+
+const flipBack = (card) => {
+    card.src = "images/back.png"
+}
 
 const checkForMatch = (cardOne, cardTwo) => {
 
@@ -45,18 +54,23 @@ const checkForMatch = (cardOne, cardTwo) => {
     var cardTwoId = cardTwo.getAttribute('data-id');
 
     if (cards[cardOneId].rank === cards[cardTwoId].rank) {
-        console.log("Cards: " + cards)            
-        console.log("Cards in PlayHTML: " + cardsInPlayHTML.length)
-        matchedCards = matchedCards.concat(cardsInPlayHTML)  //added HTML
-        console.log("Matched Cards: " + matchedCards.length) 
-        score += 1
+        matchedCards = matchedCards.concat(cardsInPlayHTML)
+        updateScore()
         cardsInPlayHTML = []
         console.log("You found a match!");
         
     } else {
         console.log("Sorry, try again");
-        cardOne.src = "images/back.png"
-        cardTwo.src = "images/back.png"
+
+        setTimeout(function() {
+            flipBack(cardOne);
+        }, 500);
+
+ 
+        setTimeout(function() {
+            flipBack(cardTwo);
+        }, 500);
+
         cardsInPlayHTML = []
     }
 }
@@ -71,7 +85,7 @@ const flipCard = (event) => {
         console.log("User flipped " + cards[cardId].rank);
         cardsInPlayHTML.push(event.target)
         if (cardsInPlayHTML.length === 2){
-            checkForMatch(cardsInPlayHTML[0], cardsInPlayHTML[1])
+            window.setTimeout(checkForMatch(cardsInPlayHTML[0], cardsInPlayHTML[1]), 3000);
         }
         
     }
@@ -81,18 +95,26 @@ const flipCard = (event) => {
 const reset = () => {
 
     for (var i=0; i < matchedCards.length; i++) {
-
-        var card = matchedCards[i].getAttribute('src')
         matchedCards[i].src = "images/back.png"       
     }
 
+    if (cardsInPlayHTML.length > 0) {cardsInPlayHTML[0].src = "images/back.png"}
+
     matchedCards = []
+    cardsInPlayHTML = []
+    score = 0
+    scoreBoard.textContent = "0"
 }
 
 document.querySelector('#reset').addEventListener('click', reset)
 
+//Update html score board
 
+const updateScore = () => {
+    score += 1
+    scoreBoard.textContent = score.toString()
 
+}
 
 createBoard()
 
