@@ -35,14 +35,22 @@ const createBoard = () => {
 
 //Task: remove flipped card from cards if it is a match
 
+var matchedCards = []
+
 const checkForMatch = () => {
 
     if (cardsInPlay.length === 2){
         if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
-            alert("You found a match!");
+            
+            matchedCards = matchedCards.concat(cardsInPlay)
+            console.log("Cards: " + cards)            
+            console.log("Cards in Play: " + cardsInPlay.length)
+            console.log("Matched Cards: " + matchedCards) 
             cardsInPlay = []
+            console.log("You found a match!");
+
         } else {
-            alert("Sorry, try again");
+            console.log("Sorry, try again");
             cardsInPlay = []
         }
     }
@@ -56,12 +64,8 @@ const flipCard = (event) => {
     event.target.src = cards[cardId].image
 
     console.log("User flipped " + cards[cardId].rank);
-    //Pull the flipped card from cards and add it to to cardsInPlay
-    console.log("cardId: " + cardId)
-    const cardUp = cards.splice(0, 1)[0];
-    console.log("deleted:" + cardUp.rank)
-    cardsInPlay.push(cardUp);
-    console.log("Cards in play: " + cardsInPlay.length);
+    cardsInPlay.push(cards[cardId]);
+ 
     checkForMatch()
 }
 
